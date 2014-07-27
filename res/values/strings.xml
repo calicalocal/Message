@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Message</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display">DisplayActivity</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_tabs">TabsActivity</string>
+    <string name="tab1">NOW</string>
+    <string name="tab2">HISTORY</string>
+    <string name="tab3">OTHERS</string>
+    <string name="title_activity_dummy">DummyActivity</string>
+    <string name="title_activity_read_comments">ReadComments</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_add_comment">AddComment</string>
+
+    <!-- string ids for registration.xml -->
+    <string name="username_textview">Username:</string>
+    <string name="password_textview">Password:</string>
+    <string name="submit">Submit</string>
+
+    <!-- string ids for home.xml -->
+    <string name="post_comment">Send</string>
+    <string name="read_comments_title">Recent Comments</string>
+    <string name="passwords_not_same">Passwords don\'t match</string>
+    <string name="title_activity_reply">Reply</string>
+    <string name="title_activity_history">History</string>
+
+    <string-array name="spnHash_items">
+        <item>be動詞</item>
+        <item>一般動詞</item>
+        <item>進行形</item>
+        <item>完了形</item>
+        <item>未来形</item>
+        <item>不定詞</item>
+        <item>動名詞</item>
+        <item>受身</item>
+        <item>前置詞</item>
+        <item>疑問詞</item>
+        <item>接続詞</item>
+        <item>関係代名詞</item>
+        <item>助動詞</item>
+        <item>比較</item>
+        <item>未来形</item>
+    </string-array>
+
+    <string name="spnOs_prompt">OSを洗濯して</string>
+    <string name="title_activity_history_others">HistoryOthers</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    
+	<string name="app_id">313641298772253</string>
+    
+
+</resources>

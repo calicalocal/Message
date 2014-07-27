@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#ffffff">
+    
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo" />
+    
+	<com.facebook.widget.LoginButton
+		android:id="@+id/authButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="30dp" />
+    
+    <Button
+        android:id="@+id/btnGCMRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register with Google GCM Server"
+        android:layout_margin="10dip" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_margin="10dp"
+        android:background="@android:color/darker_gray" />
+ 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Enter name and register with GCM app server."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+ 
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:singleLine="true" />
+        
+    <Button
+        android:id="@+id/btnAppShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share GCM-RegId with App Server"
+        android:layout_margin="10dip" />
+
+</LinearLayout>

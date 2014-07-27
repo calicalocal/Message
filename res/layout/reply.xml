@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="#f0f0f0"
+	android:orientation="vertical" >
+
+
+	<LinearLayout
+		android:id="@+id/innerBox"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginRight="6dp"
+		android:layout_marginTop="3dp"
+		android:layout_marginLeft="6dp"
+		android:background="@drawable/post_background_style"			
+		android:orientation="vertical"
+		android:padding="5dp" >
+				
+		<TextView
+			android:id="@+id/question"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingBottom="2dip"
+			android:paddingLeft="8dp"
+			android:textColor="#888" >
+		</TextView>
+				
+		<TextView
+			android:id="@+id/hash"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingBottom="2dip"
+			android:paddingLeft="8dp"
+			android:textColor="#888" >
+		</TextView>
+
+	</LinearLayout>
+	
+	<LinearLayout
+		android:id="@+id/bottom_layover"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentLeft="true"
+		android:orientation="horizontal"
+		android:background="#B5E7FF" >
+
+		<EditText
+		    android:id="@+id/answer"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+			android:layout_weight="8" 
+			android:hint="答えを送ってみよう" >
+
+		    <requestFocus />
+		</EditText>
+
+		<Button
+			android:id="@+id/send_answer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="addComment"
+			android:text="@string/post_comment" 
+			android:layout_weight="1" />
+	</LinearLayout>
+		
+</RelativeLayout>
