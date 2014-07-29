@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" android:background="#ffffff">
+    android:orientation="vertical" android:background="#ff7f14">
     
     <ImageView
         android:layout_width="200dp"
@@ -10,13 +10,15 @@
         android:layout_gravity="center"
         android:src="@drawable/logo" />
     
-	<com.facebook.widget.LoginButton
-		android:id="@+id/authButton"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal"
-		android:layout_marginTop="30dp" />
+	<fragment
+        android:id="@+id/facebookLogin"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        class="com.example.message.FacebookLogin" >
+    </fragment>
     
+<!--     
     <Button
         android:id="@+id/btnGCMRegister"
         android:layout_width="match_parent"
@@ -56,5 +58,5 @@
         android:layout_height="wrap_content"
         android:text="Share GCM-RegId with App Server"
         android:layout_margin="10dip" />
-
+ -->
 </LinearLayout>

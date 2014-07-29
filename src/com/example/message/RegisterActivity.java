@@ -26,7 +26,7 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.facebook.*;
 import com.facebook.model.*;
 
-public class RegisterActivity extends ActionBarActivity {
+public class RegisterActivity extends ActionBarActivity implements FacebookLogin.OnItemSelectedListener {
 
 	  Button btnGCMRegister;
 	  Button btnAppShare;
@@ -34,7 +34,7 @@ public class RegisterActivity extends ActionBarActivity {
 	  Context context;
 	  String regId;
 	  EditText userName;
-	  String name;
+//	  String name;
 	  
 	  ShareExternalServer appUtil;
 	  AsyncTask<Void, Void, String> shareRegidTask;
@@ -49,8 +49,8 @@ public class RegisterActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.activity_register);
-
+		setContentView(R.layout.activity_register);
+/*
 	    if (savedInstanceState == null) {
 	        // Add the fragment on initial activity setup
 	        mainFragment = new MainFragment();
@@ -63,6 +63,7 @@ public class RegisterActivity extends ActionBarActivity {
 	        mainFragment = (MainFragment) getSupportFragmentManager()
 	        .findFragmentById(android.R.id.content);
 	    }
+*/
 /*
 		// start Facebook Login
 		Session.openActiveSession(this, true, new Session.StatusCallback() {
@@ -155,6 +156,44 @@ public class RegisterActivity extends ActionBarActivity {
 	    	}
 	    });	
 */	
+	}
+	
+	@Override
+	public void onLoggedIn(final String fbname) {
+		if (TextUtils.isEmpty(regId)) {
+			regId = registerGCM();
+			Log.d("RegisterActivity", "GCM RegId: " + regId);
+		}
+		appUtil = new ShareExternalServer();
+    			
+		//final Context context = this;
+		shareRegidTask = new AsyncTask<Void, Void, String>() {
+
+			@Override
+			protected String doInBackground(Void... params) {
+				String result = appUtil.shareRegIdWithAppServer(regId, fbname);
+				return result;
+			}
+				
+			@Override
+			protected void onPostExecute(String result) {
+				shareRegidTask = null;
+				Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+			}
+				
+		};
+		shareRegidTask.execute(null, null, null);
+	
+		Intent i = new Intent(getApplicationContext(),
+			TabsActivity.class);
+		i.putExtra(Config.REGISTER_NAME, fbname);
+		i.putExtra("regId", regId);
+		Log.d("RegisterActivity",
+			"onClick of Share: Before starting main activity.");
+		startActivity(i);
+		finish();
+		Log.d("RegisterActivity", "onClick of Share: After finish.");
+
 	}
 
 	public String registerGCM() {
@@ -265,4 +304,5 @@ public class RegisterActivity extends ActionBarActivity {
 		super.onActivityResult(requestCode, resultCode, data);
 		Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
 	}
+
 }
